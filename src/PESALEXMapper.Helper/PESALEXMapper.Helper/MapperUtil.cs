@@ -8,33 +8,35 @@ namespace PESALEXMapper.Helper
 {
 
     /// <summary>
-    /// Mapeamento de classes e propriedades
+    /// Mapping classes and properties
     /// </summary>
     public static class MapperUtil
     {
         #region IngoreDependencies
 
         /// <summary>
-        /// Ignorar dependencias no mapeamento
+        /// Ignore dependencies in mapping
         /// </summary>
-        /// <typeparam name="S">tipo de origem</typeparam>
-        /// <typeparam name="D">tipo de destino</typeparam>
-        /// <param name="source">origem</param>
-        /// <param name="destiny">destino</param>
+        /// <typeparam name="S">source type</typeparam>
+        /// <typeparam name="D">destine type</typeparam>
+        /// <param name="source">source</param>
+        /// <param name="destiny">destine</param>
         public static void MapIgnoreDependences<S, D>(S source, D destiny) => Mapper(source, destiny);
+
         /// <summary>
-        /// Ignorar dependencias no mapeamento
+        /// Ignore dependencies in mapping
         /// </summary>
-        /// <typeparam name="S">tipo de origem</typeparam>
-        /// <typeparam name="D">tipo de destino</typeparam>
-        /// <param name="source">origem</param>
+        /// <typeparam name="S">source type</typeparam>
+        /// <typeparam name="D">destine type</typeparam>
+        /// <param name="source">source</param>
         /// <returns></returns>
         public static D MapIgnoreDependences<S, D>(S source) => Mapper(source, Activator.CreateInstance<D>());
+        
         /// <summary>
-        /// Ignorar dependencias no mapeamento
+        /// Ignore dependencies in mapping
         /// </summary>
-        /// <typeparam name="T">tipo de retorno</typeparam>
-        /// <param name="source">origem</param>
+        /// <typeparam name="T">destine type</typeparam>
+        /// <param name="source">source</param>
         /// <returns></returns>
         public static T MapIgnoreDependences<T>(object source) => Mapper(source, Activator.CreateInstance<T>());
 
@@ -43,26 +45,28 @@ namespace PESALEXMapper.Helper
         #region WithDependencies
 
         /// <summary>
-        /// Manter dependencias no mapeamento
+        /// Keep dependencies in mapping
         /// </summary>
-        /// <typeparam name="S">tipo de origem</typeparam>
-        /// <typeparam name="D">tipo de destino</typeparam>
-        /// <param name="source">origem</param>
-        /// <param name="destiny">destino</param>
+        /// <typeparam name="S">source type</typeparam>
+        /// <typeparam name="D">destine type</typeparam>
+        /// <param name="source">source</param>
+        /// <param name="destiny">destine</param>
         public static void MapKeepDependencies<S, D>(S source, D destiny) => Mapper(source, destiny, false);
+
         /// <summary>
-        /// Manter dependencias no mapeamento
+        /// Keep dependencies in mapping
         /// </summary>
-        /// <typeparam name="S">tipo de origem</typeparam>
-        /// <typeparam name="D">tipo de destino</typeparam>
-        /// <param name="source">origem</param>
+        /// <typeparam name="S">source type</typeparam>
+        /// <typeparam name="D">destine type</typeparam>
+        /// <param name="source">source</param>
         /// <returns></returns>
         public static D MapKeepDependencies<S, D>(S source) => Mapper(source, Activator.CreateInstance<D>(), false);
+
         /// <summary>
-        /// Manter dependencias no mapeamento
+        /// Keep dependencies in mapping
         /// </summary>
-        /// <typeparam name="T">tipo de retorno</typeparam>
-        /// <param name="source">origem</param>
+        /// <typeparam name="T">destine type</typeparam>
+        /// <param name="source">source</param>
         /// <returns></returns>
         public static T MapKeepDependencies<T>(object source) => Mapper(source, Activator.CreateInstance<T>(), false);
 
@@ -178,10 +182,9 @@ namespace PESALEXMapper.Helper
         }
 
         /// <summary>
-        /// Obter as propriedades distinta dinamicamente (concatenadas)
+        /// Obtain the distinct properties dynamically (concatenated)
         /// </summary>
-        /// <param name="source">dados</param>
-        /// <param name="intersection">interseção</param>
+        /// <param name="source">data</param>
         /// <returns></returns>
         public static string ConcatCSV<TInput>(object source)
         {
@@ -213,9 +216,9 @@ namespace PESALEXMapper.Helper
         }
 
         /// <summary>
-        /// Concatena parametros com separação de virgula
+        /// Concatenate Parameters with Comma Separation
         /// </summary>
-        /// <param name="values">values para composição do id em ordem</param>
+        /// <param name="values">any object array to concat</param>
         /// <returns></returns>
         public static string ConcatCSV(params object[] values)
         {
@@ -231,11 +234,11 @@ namespace PESALEXMapper.Helper
         }
 
         /// <summary>
-        /// Obter Valor da propriedade
+        /// Get value on property
         /// </summary>
-        /// <typeparam name="T">Tipo de propriedade</typeparam>
-        /// <param name="obj">object</param>
-        /// <param name="keyName">objeto</param>
+        /// <typeparam name="T">source type</typeparam>
+        /// <param name="obj">source</param>
+        /// <param name="keyName">property</param>
         /// <returns></returns>
         public static object GetValue<T>(T obj, string keyName)
             where T : class
@@ -245,12 +248,12 @@ namespace PESALEXMapper.Helper
         }
 
         /// <summary>
-        /// Inserir valor na propriedade
+        /// Get value on property
         /// </summary>
-        /// <typeparam name="T">Tipo de propriedade</typeparam>
-        /// <param name="obj">object</param>
-        /// <param name="keyName">objeto</param>
-        /// <param name="value">valor</param>
+        /// <typeparam name="T">source type</typeparam>
+        /// <param name="obj">source</param>
+        /// <param name="keyName">property</param>
+        /// <param name="value">value to apply</param>
         public static void SetValue<T>(T obj, string keyName, object value)
             where T : class
         {

@@ -9,8 +9,6 @@ namespace PESALEXMapper.Helper
     /// </summary>
     public static class EnumUtil
     {
-        #region typeparam
-
         /// <summary>
         /// Obtain the description of the member of an enum
         /// </summary>
@@ -57,8 +55,6 @@ namespace PESALEXMapper.Helper
                 result.Add(GetDescription<TEnum>(value.ToString()));
             return result;
         }
-
-        #endregion
-
+        
     }
 }

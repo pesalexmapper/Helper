@@ -3,15 +3,15 @@
 namespace PESALEXMapper.Helper
 {
     /// <summary>
-    /// Auxiliar de implementação
+    /// Implementation helper
     /// </summary>
     public static class ImplementationUtil
     {
         /// <summary>
-        /// Verificar se a interface está sendo implementada
+        /// Verify that the interface is being implemented
         /// </summary>
-        /// <param name="type">implementação</param>
-        /// <param name="interfaceName">nome da interface</param>
+        /// <param name="type">implementation</param>
+        /// <param name="interfaceName">interface</param>
         /// <returns></returns>
         public static bool ContainsInterface(Type type, string interfaceName)
         {
@@ -19,10 +19,10 @@ namespace PESALEXMapper.Helper
         }
 
         /// <summary>
-        /// Verifica se a propriedade existe
+        /// Checks if the property exists
         /// </summary>
-        /// <param name="type">implementação</param>
-        /// <param name="propertyName">nome da propriedade</param>
+        /// <param name="type">implementation</param>
+        /// <param name="propertyName">property</param>
         /// 
         /// <returns></returns>
         public static bool ContainsProperty(Type type, string propertyName)

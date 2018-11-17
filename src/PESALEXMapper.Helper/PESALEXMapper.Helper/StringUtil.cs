@@ -39,7 +39,7 @@ namespace PESALEXMapper.Helper
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [Obsolete("RemoveSpecialCharacters")]
+        [Obsolete("RemoveSpecialChars")]
         public static string WithoutParentheses(this string value)
         {
             string response = null;
