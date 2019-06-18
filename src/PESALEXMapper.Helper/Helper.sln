@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2046
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PESALEXMapper.Helper", "PESALEXMapper.Helper\PESALEXMapper.Helper.csproj", "{C2704980-C2E5-4D99-B240-967A2E55615D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PESALEXMapper.Helper.Tests", "PESALEXMapper.Helper.Tests\PESALEXMapper.Helper.Tests.csproj", "{32FF4D4B-B88A-40BD-B099-D7ACD8AAD09A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standad", "Standad", "{9B0B205E-D09C-4A4C-8E88-9F697219B9F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PESALEXMapper.Helper", "PESALEXMapper.Helper\PESALEXMapper.Helper.csproj", "{7C397180-DF94-4515-B8C5-31EBC04B5A0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{B199EEBD-99AF-44E7-B004-43DD4E11A28C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PESALEXMapper.Helper", "PESALEXMapper.Helper-Framework\PESALEXMapper.Helper.csproj", "{C2704980-C2E5-4D99-B240-967A2E55615D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,17 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2704980-C2E5-4D99-B240-967A2E55615D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2704980-C2E5-4D99-B240-967A2E55615D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2704980-C2E5-4D99-B240-967A2E55615D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2704980-C2E5-4D99-B240-967A2E55615D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32FF4D4B-B88A-40BD-B099-D7ACD8AAD09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32FF4D4B-B88A-40BD-B099-D7ACD8AAD09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32FF4D4B-B88A-40BD-B099-D7ACD8AAD09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32FF4D4B-B88A-40BD-B099-D7ACD8AAD09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C397180-DF94-4515-B8C5-31EBC04B5A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C397180-DF94-4515-B8C5-31EBC04B5A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C397180-DF94-4515-B8C5-31EBC04B5A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C397180-DF94-4515-B8C5-31EBC04B5A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2704980-C2E5-4D99-B240-967A2E55615D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2704980-C2E5-4D99-B240-967A2E55615D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2704980-C2E5-4D99-B240-967A2E55615D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2704980-C2E5-4D99-B240-967A2E55615D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{32FF4D4B-B88A-40BD-B099-D7ACD8AAD09A} = {B199EEBD-99AF-44E7-B004-43DD4E11A28C}
+		{7C397180-DF94-4515-B8C5-31EBC04B5A0C} = {9B0B205E-D09C-4A4C-8E88-9F697219B9F3}
+		{C2704980-C2E5-4D99-B240-967A2E55615D} = {B199EEBD-99AF-44E7-B004-43DD4E11A28C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2E27017-10ED-456E-911E-C99DA034ACB7}

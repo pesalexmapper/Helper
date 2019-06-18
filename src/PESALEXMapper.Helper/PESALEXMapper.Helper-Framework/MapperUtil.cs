@@ -31,7 +31,7 @@ namespace PESALEXMapper.Helper
         /// <param name="source">source</param>
         /// <returns></returns>
         public static D MapIgnoreDependences<S, D>(S source) => Mapper(source, Activator.CreateInstance<D>());
-
+        
         /// <summary>
         /// Ignore dependencies in mapping
         /// </summary>
@@ -186,7 +186,7 @@ namespace PESALEXMapper.Helper
         /// </summary>
         /// <param name="source">data</param>
         /// <returns></returns>
-        public static string ConcatenatedExcept<TInput>(object source)
+        public static string ConcatCSV<TInput>(object source)
         {
             StringBuilder result = new StringBuilder();
             try
@@ -213,38 +213,6 @@ namespace PESALEXMapper.Helper
                 Console.Write(ex);
             }
             return result.ToString();
-        }
-
-
-        /// <summary>
-        /// Obtain the distinct properties dynamically
-        /// </summary>
-        /// <param name="source">data</param>
-        /// <returns></returns>
-        public static List<object> Except<TInput>(object source)
-        {
-            var result = new List<object>();
-            try
-            {
-                PropertyInfo temp = null;
-                var dictionarySource = (IDictionary<string, object>)source;
-                PropertyInfo[] destinies = typeof(TInput).GetProperties();
-                for (int i = 0; i < dictionarySource.Keys.Count; i++)
-                {
-                    var value = dictionarySource.Values.ElementAt(i);
-                    var key = dictionarySource.Keys.ElementAt(i);
-                    temp = destinies.FirstOrDefault(p => p.Name.Equals(key));
-                    if (temp == null)
-                    {
-                        result.Add(value);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex);
-            }
-            return result;
         }
 
         /// <summary>
