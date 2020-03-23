@@ -188,6 +188,8 @@ Take advantage of the mapping capabilities through the static class  ```EnumUtil
 > Obtain the description of the member of an enum:
 ```csharp
 var result = EnumUtil.DescriptionList<EnumValue>();
+// result[0] => "1ª name"
+// result[3] => "4ª name"
 // result.Count => 4
 ```
 
@@ -203,9 +205,11 @@ var result = EnumUtil.GetDescriptionOfType<EnumValue>();
 
 > Obtain the description list of all members:
 ```csharp
-var result = EnumUtil.GetDescription<EnumValue>(EnumValue.FooBar.ToString());
-// result =>"3ª name"
+var resultA = EnumUtil.GetDescription<EnumValue>(EnumValue.FooBar.ToString());
+var resultB = EnumUtil.GetDescription<EnumValue>("FooBar");
+// resultA => "3ª name"
+// resultB => resultA
 ```
 
 ## Report Support
-To report errors, questions and suggestions go to the [link](https://www.nuget.org/packages/PESALEXMapper.Helper/1.0.0/ReportMyPackage)
+To report errors, questions and suggestions go to the [link](https://www.nuget.org/packages/PESALEXMapper.Helper/2.0.0/ReportMyPackage)

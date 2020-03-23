@@ -18,12 +18,10 @@ namespace PESALEXMapper.Helper
         public static string GetDescription<TEnum>(string member)
             where TEnum : struct, IConvertible
         {
-            string description = string.Empty;
             var type = typeof(TEnum);
             var memberInfo = type.GetMember(member);
-            var newInfo = memberInfo[0];
             object[] attributes = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-            description = ((DescriptionAttribute)attributes[0]).Description;
+            var description = ((DescriptionAttribute)attributes[0]).Description;
             return description;
         }
 
@@ -35,11 +33,38 @@ namespace PESALEXMapper.Helper
         public static string GetDescriptionOfType<TEnum>()
             where TEnum : struct, IConvertible
         {
-            string description = string.Empty;
             var type = typeof(TEnum);
             var custonAtributes = type.GetCustomAttributes(typeof(DescriptionAttribute), true);
-            description = ((DescriptionAttribute)custonAtributes[0]).Description;
+            string description = ((DescriptionAttribute)custonAtributes[0]).Description;
             return description;
+        }
+
+        public static string GetDescription<TEnum>(int value)
+            where TEnum : struct, IConvertible
+        {
+            var type = typeof(TEnum);
+            var name = Enum.GetName(type, value);
+            var memberInfo = type.GetMember(name);
+            object[] attributes = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+            string description = ((DescriptionAttribute)attributes[0]).Description;
+            return description;
+        }
+
+        public static int GetValue<TEnum>(string description)
+            where TEnum : struct, IConvertible
+        {
+            var type = typeof(TEnum);
+            foreach (var name in Enum.GetNames(type))
+            {
+                var memberInfo = type.GetMember(name);
+                object[] attributes = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                if (((DescriptionAttribute)attributes[0]).Description == description)
+                {
+                    var tmp = (TEnum)Enum.Parse(type, name);
+                    return (int)Convert.ChangeType(tmp, tmp.GetTypeCode());
+                }
+            }
+            return default;
         }
 
         /// <summary>
@@ -47,7 +72,8 @@ namespace PESALEXMapper.Helper
         /// </summary>
         /// <typeparam name="TEnum">enum</typeparam>
         /// <returns></returns>
-        public static ICollection<string> DescriptionList<TEnum>()
+       [Obsolete("Use DescriptionArray")]
+        public static IList<string> DescriptionList<TEnum>()
             where TEnum : struct, IConvertible
         {
             var result = new List<string>();
@@ -55,6 +81,20 @@ namespace PESALEXMapper.Helper
                 result.Add(GetDescription<TEnum>(value.ToString()));
             return result;
         }
-        
+
+        /// <summary>
+        /// Obtain the description list of all members
+        /// </summary>
+        /// <typeparam name="TEnum">enum</typeparam>
+        /// <returns></returns>
+        public static string[] DescriptionArray<TEnum>()
+            where TEnum : struct, IConvertible
+        {
+            var result = new List<string>();
+            foreach (var value in (TEnum[])Enum.GetValues(typeof(TEnum)))
+                result.Add(GetDescription<TEnum>(value.ToString()));
+            return result.ToArray();
+        }
+
     }
 }
