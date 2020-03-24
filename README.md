@@ -1,4 +1,4 @@
-# PESALEXMapper Helper
+# PELEXMapper 
 ![](https://img.shields.io/nuget/v/PESALEXMapper.Helper.svg)
 
 ## Features
