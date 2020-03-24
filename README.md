@@ -1,18 +1,18 @@
 # PELEXMapper 
-![](https://img.shields.io/nuget/v/PESALEXMapper.Helper.svg)
+![](https://img.shields.io/nuget/v/PELEXMapper.svg)
 
 ## Features
-PESALEXMapper.Helper is a [NuGet library](https://www.nuget.org/api/v2/package/PESALEXMapper.Helper) that you can have a framework to functionality improvements.
+PELEXMapper is a [NuGet library](https://www.nuget.org/api/v2/package/PELEXMapper) that you can have a framework to functionality improvements.
 
 The following platforms are supported:
 - .NET
 
 ## Getting started
-The easiest way to get started is by [installing the available NuGet packages](https://www.nuget.org/packages/PESALEXMapper.Helper) and if you're not a NuGet fan then follow these steps:
+The easiest way to get started is by [installing the available NuGet packages](https://www.nuget.org/packages/PELEXMapper) and if you're not a NuGet fan then follow these steps:
 
-Download the latest runtime library from: https://www.nuget.org/api/v2/package/PESALEXMapper.Helper;
+Download the latest runtime library from: https://www.nuget.org/api/v2/package/PELEXMapper;
 Or install the latest package:
-PM> **Install-Package PESALEXMapper.Helper**
+PM> **Install-Package PESALEXMapper**
 
 ## A Quick Example
 
@@ -203,6 +203,22 @@ var result = EnumUtil.GetDescriptionOfType<EnumValue>();
 
 ------------
 
+> Obtain the enum value by description:
+```csharp
+var result = EnumUtil.GetValue<EnumValue>("4ª name");
+// result => 3
+```
+
+------------
+
+> Obtain the description of an enum:
+```csharp
+var result = EnumUtil.GetByName<EnumValue>("Bar");
+// result => EnumValue.Bar
+```
+
+------------
+
 > Obtain the description list of all members:
 ```csharp
 var resultA = EnumUtil.GetDescription<EnumValue>(EnumValue.FooBar.ToString());
@@ -212,4 +228,4 @@ var resultB = EnumUtil.GetDescription<EnumValue>("FooBar");
 ```
 
 ## Report Support
-To report errors, questions and suggestions go to the [link](https://www.nuget.org/packages/PESALEXMapper.Helper/2.0.0/ReportMyPackage)
+To report errors, questions and suggestions go to the [link](https://www.nuget.org/packages/PELEXMapper/1.1.0/ReportMyPackage)
