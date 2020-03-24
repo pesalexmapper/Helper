@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PELEXMapper;
 using PESALEXMapper.Helper.Tests.Mock;
-using System.Collections.Generic;
-using System.Dynamic;
 
 namespace PESALEXMapper.Helper.Tests
 {

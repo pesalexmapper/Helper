@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PELEXMapper;
 using PESALEXMapper.Helper.Tests.Mock;
 
 namespace PESALEXMapper.Helper.Tests
@@ -7,14 +8,6 @@ namespace PESALEXMapper.Helper.Tests
     [TestClass]
     public class EnumUtilUnitTest
     {
-        [TestMethod]
-        public void DescriptionList_Count_4()
-        {
-            var result = EnumUtil.DescriptionList<EnumValue>();
-            Assert.AreEqual("1ª name", result[0]);
-            Assert.AreEqual(4, result.Count);
-        }
-
         [TestMethod]
         public void DescriptionArray_Count_4()
         {

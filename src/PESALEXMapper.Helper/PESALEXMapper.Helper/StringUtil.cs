@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace PESALEXMapper.Helper
+namespace PELEXMapper
 {
     /// <summary>
     /// Gadget of string (this is a extension)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PELEXMapper;
 
 namespace PESALEXMapper.Helper.Tests
 {

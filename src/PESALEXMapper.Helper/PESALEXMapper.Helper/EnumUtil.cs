@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace PESALEXMapper.Helper
+namespace PELEXMapper
 {
     /// <summary>
     /// Gadget of enum

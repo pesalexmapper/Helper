@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PESALEXMapper.Helper
+namespace PELEXMapper
 {
     /// <summary>
     /// Implementation helper
