@@ -57,5 +57,12 @@ namespace PESALEXMapper.Helper.Tests
             var result = EnumUtil.GetValue<EnumValue>("4ª name");
             Assert.AreEqual(3, result);
         }
+
+        [TestMethod]
+        public void GetByName_NameEqualBar_ValueEqualBar()
+        {
+            var result = EnumUtil.GetByName<EnumValue>("Bar");
+            Assert.AreEqual(EnumValue.Bar, result);
+        }
     }
 }

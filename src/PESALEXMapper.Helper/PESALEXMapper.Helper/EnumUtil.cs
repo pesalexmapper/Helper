@@ -50,6 +50,14 @@ namespace PESALEXMapper.Helper
             return description;
         }
 
+        public static TEnum GetByName<TEnum>(string name) 
+            where TEnum : struct, IConvertible
+        {
+            var type = typeof(TEnum);
+            var tmp = (TEnum)Enum.Parse(type, name);
+            return tmp;
+        }
+
         public static int GetValue<TEnum>(string description)
             where TEnum : struct, IConvertible
         {
