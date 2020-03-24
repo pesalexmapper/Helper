@@ -187,7 +187,7 @@ Take advantage of the mapping capabilities through the static class  ```EnumUtil
 
 > Obtain the description of the member of an enum:
 ```csharp
-var result = EnumUtil.DescriptionList<EnumValue>();
+var result = EnumUtil.DescriptionArray<EnumValue>();
 // result[0] => "1ª name"
 // result[3] => "4ª name"
 // result.Count => 4
